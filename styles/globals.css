@@ -115,6 +115,10 @@
   align-items: flex-start;
 }
 
+.button-transition {
+  @apply transition-transform ease-in-out duration-200;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

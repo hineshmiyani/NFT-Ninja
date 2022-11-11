@@ -68,6 +68,8 @@
         "specialLink": ["to", "hrefLeft", "hrefRight"],
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
-    ]
+    ],
+    "avoidEscape": true,
+    "allowTemplateLiterals": true
   }
 }
