@@ -4,12 +4,7 @@ import images from "../assets";
 import Image from "next/image";
 import { Button } from "./";
 
-const socialMediaIcons = [
-  images.instagram,
-  images.twitter,
-  images.telegram,
-  images.discord,
-];
+const socialMediaIcons = [images.instagram, images.twitter, images.telegram, images.discord];
 
 type IFooterLinkProps = {
   heading: string;
@@ -31,8 +26,7 @@ const FooterLinks = ({ heading, items }: IFooterLinkProps) => (
   </div>
 );
 
-type Props = {};
-const Footer = (props: Props) => {
+const Footer = () => {
   const { theme } = useTheme();
 
   return (
@@ -56,7 +50,7 @@ const Footer = (props: Props) => {
             <p className="font-poppins dark:text-white text-nft-black-1 font-semibold text-base mt-6">
               Get the latest updates
             </p>
-            <div className="flexBetween gap-1 md:w-full minlg:w-557 w-357 mt-6  ">
+            <div className="flexBetween gap-1 md:w-full minlg:w-557 w-357 mt-6">
               <input
                 type="email"
                 placeholder="Your Email"
@@ -71,18 +65,10 @@ const Footer = (props: Props) => {
           </div>
 
           <div className="flex-1 flexBetweenStart flex-wrap ml-10 md:ml-0 md:mt-8">
-            <FooterLinks
-              heading="NFTNinja"
-              items={["Explorer", "How it works", "Contact Us"]}
-            />
+            <FooterLinks heading="NFTNinja" items={["Explorer", "How it works", "Contact Us"]} />
             <FooterLinks
               heading="Support"
-              items={[
-                "Help Center",
-                "Terms of Service",
-                "Legal",
-                "Privacy Policy",
-              ]}
+              items={["Help Center", "Terms of Service", "Legal", "Privacy Policy"]}
             />
           </div>
         </div>
@@ -94,7 +80,7 @@ const Footer = (props: Props) => {
             </p>
             <div className="flex flex-row sm:mt-4">
               {socialMediaIcons?.map((image, index) => (
-                <div className="mx-2 cursor-pointer">
+                <div key={`image${index}`} className="mx-2 cursor-pointer">
                   <Image
                     src={image}
                     width={24}
